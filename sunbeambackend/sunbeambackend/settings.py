@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -40,13 +41,13 @@ INSTALLED_APPS = [
     # "django.contrib.sessions",
     # "django.contrib.messages",
     "django.contrib.staticfiles",
-    'sunbeamapp',
-    'rest_framework',
-    'corsheaders',
+    "sunbeamapp",
+    "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware', 
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     # "django.contrib.sessions.middleware.SessionMiddleware",
     # "django.middleware.common.CommonMiddleware",
@@ -140,8 +141,8 @@ DEFAULT_FROM_EMAIL = "deadryefield@gmail.com"
 # EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 # SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_HOST_USER = "apikey"  # this is exactly the value 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
@@ -154,3 +155,9 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
 ]
+
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+
+CELERY_TASK_ALWAYS_EAGER = False
+CELERY_TIMEZONE = "Asia/Kolkata"

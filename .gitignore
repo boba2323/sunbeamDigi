@@ -13,7 +13,7 @@ db.sqlite3
 *.coverage
 htmlcov/
 .DS_Store
-
+**/env/
 # Django specific
 /static/
 /media/
