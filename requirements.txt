@@ -13,3 +13,4 @@ celery
 cryptography
 dotenv
 django-cors-headers
+gunicorn
