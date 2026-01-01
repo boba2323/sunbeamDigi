@@ -29,7 +29,12 @@ SECRET_KEY = "django-insecure-699pg4e)hq4zywr8&^#1eywof-8wrh+1llh!)ajyncw48ww7ch
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "sunbeam-6cnmq.ondigitalocean.app",
+    "localhost",
+    "127.0.0.1",
+    "sunbeam-6cnmq.ondigitalocean.app",
+]
 
 # AUTH_USER_MODEL = 'sunbeamapp.User'
 # Application definition
@@ -49,6 +54,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     # "django.contrib.sessions.middleware.SessionMiddleware",
     # "django.middleware.common.CommonMiddleware",
     # "django.middleware.csrf.CsrfViewMiddleware",
@@ -151,9 +157,11 @@ SENDGRID_ECHO_TO_STDOUT = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "sunbeam-6cnmq.ondigitalocean.app",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
+    "sunbeam-6cnmq.ondigitalocean.app",
 ]
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
