@@ -157,11 +157,11 @@ SENDGRID_ECHO_TO_STDOUT = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "sunbeam-6cnmq.ondigitalocean.app",
+    "http://sunbeam-6cnmq.ondigitalocean.app",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
-    "sunbeam-6cnmq.ondigitalocean.app",
+    "http://sunbeam-6cnmq.ondigitalocean.app",
 ]
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
@@ -169,3 +169,5 @@ CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
 
 CELERY_TASK_ALWAYS_EAGER = False
 CELERY_TIMEZONE = "Asia/Kolkata"
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
